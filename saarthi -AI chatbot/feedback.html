@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="feedback.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+         (function(){
+            emailjs.init({
+            publicKey: "gjRY1jyUIKnawiLRz",
+        });
+    })();
+    </script>
+</head>
+<body>
+<section>
+    <p><span class="thank">Thanks for using</span><span class="bot">Saarthi!</span></p>
+    <div class="container">
+        <h1>Feedback Form</h1>
+        <form id="contactForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required >
+            <br>
+
+            <label for="description">Your Feedback:</label>
+            <textarea id="message" name="description" rows="5" required ></textarea>
+            <br>
+
+            <button type="submit">Submit</button>
+            <a href="main.html"><button type="button" class="back"><iconify-icon icon="lets-icons:back" style="color: white;" class="back-btn"></iconify-icon></button></a>
+        </form>
+    </div>
+</section>
+<script type="text/javascript">
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();  
+        sendMail();
+    });
+
+    function sendMail(){
+        let parms = {
+            name: document.getElementById("name").value,
+            message: document.getElementById("message").value,
+        };
+        emailjs.send("service_4iqdqqb", "template_fzblwsf", parms)
+        .then(function(response) {
+            alert("Email has been sent, Thanks for contacting !!");
+            document.getElementById("contactForm").reset(); 
+        }, function(error) {
+            alert("Failed to send email. Please try again.");
+        });
+    }
+</script>
+</body>
+</html>

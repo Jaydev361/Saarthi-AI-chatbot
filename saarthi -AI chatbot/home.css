@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,body {
+  overflow:hidden;
+  background:linear-gradient(rgb(29, 29, 29),rgb(172, 171, 172))
+}
+section{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* background: linear-gradient(rgb(29, 29, 29),rgb(172, 171, 172)); */
+  background-size: cover;
+  background-position: center;
+  
+}
+img{
+  max-width: 450px;
+  float:right;
+  margin:100px 268px;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.8));
+}
+
+
+.content{
+  max-width: 650px;
+  margin: 60px 100px;
+  
+}
+
+.content .info h2{
+  color: #000000;
+  font-size: 55px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 60px;
+  margin-bottom: 30px;
+  margin-top: 100px;
+}
+
+.content .info h2 span{
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.content .info p{
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.content .info-btn{
+  color: #0c0c0c;
+  background: #e4ecee;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+  transition-property: background;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+.content .info-btn:hover{
+  background: #171717;
+  color:#e4ecee;
+}
+
+.media-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.media-icons a{
+  position: relative;
+  color: #111;
+  font-size: 20px;
+  transition: 0.3s;
+  bottom: 10vh;
+  margin-bottom: 10px;
+  transition-property: transform;
+}
+
+.media-icons a:not(:last-child){
+  margin-right: 60px;
+}
+
+.media-icons a:hover{
+  transform: scale(1.5);
+}
+
+#check{
+  z-index: 3;
+  display: none;
+}
+
+/* Responsive CSS */
+
+@media (max-width: 960px){
+
+  .content .info h2{
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  .content .info h2 span{
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .content .info p{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px){
+  .content .info h2{
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .content .info h2 span{
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .content .info p{
+    font-size: 14px;
+  }
+}
+/* help icon */
+.btn-help {
+  position: fixed;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  z-index: 1000; /* Ensure it appears above the navbar */
+  width: 45px;
+  height: 45px;
+  background: #232323;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgb(128, 127, 127);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s ease-in-out;
+  overflow: hidden;
+}
+
+.btn-help:hover {
+  background: #eee;
+  border-radius: 15px;
+  width: 250px;
+  height: 300px;
+}
+
+.btn-help span {
+  position: absolute;
+  font-size: 30px;
+  color: #fbf8f8;
+}
+
+.text-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  opacity: 0;
+}
+
+.btn-help:hover .text-section {
+  animation: fadeIn 0.7s 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width:1350px){
+  img{
+    width:350px;
+    margin:100px 8px;
+    float:right;
+  }
+}
+
+@media screen and (max-width:984px){
+  .btn-help{
+    display: none;
+  }
+  img{
+    display: none;
+  }
+  .content{
+    margin: 50px;
+  }
+}
+  
